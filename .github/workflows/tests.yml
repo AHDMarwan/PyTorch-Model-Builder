@@ -16,5 +16,7 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements-dev.txt
+      - name: Compile Python sources
+        run: python -m py_compile app.py pages/*.py model_builder/*.py
       - name: Run tests
         run: pytest -q
